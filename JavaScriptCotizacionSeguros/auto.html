@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Datos de Auto</title>
+    </head>
+    <body>
+        <form action="cotizacion.html" method="GET">
+            
+            <h1>Sistema de Cotización de Seguros de Auto</h1>
+        <p><b>Datos personales:</b></p>
+
+<script>
+	const all_parameters= window.location.search;
+	
+	
+	const urlParams = new URLSearchParams(all_parameters);
+	const nombre = urlParams.get("nombre");
+	const apellidos = urlParams.get("apellidos");
+	console.log(nombre);
+	console.log(apellidos);
+
+	document.write("<p>Estimado Sr. " +nombre+" "+ apellidos+"</p>");
+	document.write("<input type='hidden' name='nombre' value='"+nombre +" "+apellidos+"'/>"); 
+	
+</script>
+        
+        <p><b>Datos del auto</b></p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Marca:</td>
+                    <td><select name="marca">
+                            <option>Ford</option>
+                            <option>Chevrolet</option>
+                            <option>Nissan</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Modelo:</td>
+                    <td><input type="text" name="modelo" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Placas:</td>
+                    <td><input type="text" name="placas" value="" /></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Limpiar" /></td>
+                    <td><input type="submit" value="Enviar" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        
+        </form>        
+        
+
+    </body>
+</html>

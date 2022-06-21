@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cotización</title>
+    </head>
+    <body>
+	<script>
+		const all_parameters= window.location.search;
+	
+		const urlParams = new URLSearchParams(all_parameters);
+		const nombre = urlParams.get("nombre");
+		const modelo = urlParams.get("modelo");
+		const placas = urlParams.get("placas");
+		
+		document.write("<p>Estimado Sr. " +nombre+ "</p>");
+	
+</script>
+
+        <h1>Cotización de seguro para Automóvil</h1>
+        <BR>En función a los datos proporcionados: 
+			<script>
+            if (parseInt(modelo)>2000){
+               document.write("<h1>$7,800.00 pesos</h1>"); 
+            } else {
+               document.write("<h1>$4,200.00 pesos</h1>"); 
+            }
+            </script>
+    </body>
+</html>
