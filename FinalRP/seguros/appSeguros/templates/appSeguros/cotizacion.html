@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cotización</title>
+</head>
+
+<body>
+
+    {% if cliente %}
+    <p>Estima@ {{cliente.nombre} {cliente.apellidos}}</p>
+    {% endif %}
+    <h1>Cotización de seguro para Automóvil</h1>
+    <BR>En función a los datos proporcionados:
+    {% if auto %}
+    <h1>$ {{auto.getCot}} pesos</h1>
+    {% endif %}
+
+    <h2>Las personas que han cotizado con nosotros son:</h2>
+    {% if clientes and auto %}
+    <ul>
+        {% for cliente in clientes %}
+        <li>
+            {{cliente} {auto.getCot}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay clientes interesados.</p>
+    {% endif %}
+
+</body>
+
+</html>
